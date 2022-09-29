@@ -14,7 +14,9 @@
 
 */
 
-#include <iostream>
+#include <iostream>  
+// #include is a preprocessor directive
+// iostream is a header file for i/o
 
 using namespace std;
 
@@ -22,6 +24,7 @@ int main(){
 
     int a = 12;
     cout << "Size of int is "<< sizeof(a)<<endl;
+    // can use std::cout << . if line 21 not used..
 
     float b = 12.22;
     cout << "Size of float is "<< sizeof(b)<<endl;
@@ -29,5 +32,5 @@ int main(){
     long long int c = 123;
     cout << "Size of Long Long is "<<sizeof(c)<<endl;
 
-    return 0;
+    return 0; // exit the func
 }
