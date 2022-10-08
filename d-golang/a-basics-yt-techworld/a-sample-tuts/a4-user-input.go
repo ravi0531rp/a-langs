@@ -26,6 +26,8 @@ func main() {
 	fmt.Print("Enter Number Of Tickets : ")
 	fmt.Scan(&user_tickets)
 
-	fmt.Printf("User %v %v booked %v tickets with %v to attend..\n", firstname, lastname, user_tickets, email)
+	remainingTickets = remainingTickets - uint(user_tickets)
 
+	fmt.Printf("User %v %v booked %v tickets with %v to attend..\n", firstname, lastname, user_tickets, email)
+	fmt.Printf("%v tickets remain", remainingTickets)
 }
