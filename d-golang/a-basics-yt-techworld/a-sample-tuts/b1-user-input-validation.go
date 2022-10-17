@@ -38,7 +38,7 @@ func main() {
 
 		var validity bool = len(firstname) >= 2 && len(lastname) >= 2 && strings.Contains(email, "@")
 
-		if validity == false {
+		if validity == false { // != True or !validity
 			fmt.Println("Invalid Input.. ")
 			continue
 		}
