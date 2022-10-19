@@ -240,7 +240,7 @@ int main(){
 * Relational Operators
     1) ==
     2) !=
-    3) > , >= , < , <=
+    3) \> , >= , < , <=
 
 * Logical Operators
     1) && - AND
@@ -253,7 +253,7 @@ int main(){
     3) ^ - Xor
     4) ~ - One's Complement
     5) << Left Shift 4 << 1 (0100) : 1000
-    6) >> Right Shift
+    6) \>> Right Shift
     Note : a << n gives a * exp(2,n) and a>> n gives a/exp(2,n)
 
 * Miscellaneous
@@ -262,7 +262,7 @@ int main(){
     3) cast
     4) Comma     ; a = (2,3,4) gives a as 4
     5) & Returns the address of a variable 
-    6) * Pointer to the object or the variable ; int a ; int *b = &a
+    6) \* Pointer to the object or the variable ; int a ; int *b = &a
 ```
 #include <iostream>
 using namespace std;
