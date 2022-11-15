@@ -258,7 +258,7 @@ int main(){
 
 * Miscellaneous
     1) sizeof()
-    2) Consition?a:b     ; (Ternary Operator) gives a if true else b
+    2) Condition?a:b     ; (Ternary Operator) gives a if true else b
     3) cast
     4) Comma     ; a = (2,3,4) gives a as 4
     5) & Returns the address of a variable 
@@ -276,6 +276,64 @@ int main(){
     k = i + j + i++ + j++ + ++i + ++j;
     cout<< i << " "<<j<<" "<<k<<endl;
     return 0;
+}
+
+```
+
+8. Functions
+* They are used to Have independent functionality within the code
+* Difference based on Return Types and Inputs
+
+```
+
+int add(int num1, int num2){
+    int sum = num1 + num2;
+    return sum;
+}
+
+bool is_prime(int num){
+    for (int i; i< sqrt(num); i++ ){
+        if (num%i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+void fib(int n){
+    int t1 = 0;
+    int t2 = 1;
+    int next_term ;
+
+    for (int i = 1; i<=n; i++){
+        cout<<t1<<" ";
+        next_term = t1 + t2;
+        t1 = t2;
+        t2 = next_term;
+        
+    }
+
+}
+
+int factorial(int n){
+
+    if (n <0){
+        return 0;
+    }
+    if (n == 0){
+        return 1;
+    }
+    int fact = 1;
+    int count = 1;
+    while (true){
+        if (count == n + 1){
+            break;
+        }
+        fact = fact * count;
+        count += 1;
+        
+    }
+    return fact;
 }
 
 ```
