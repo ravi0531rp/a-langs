@@ -1,8 +1,8 @@
-## CPP : Basics to DSA Advanced
+# CPP : Basics to DSA Advanced
 
-1) Basic Hello World
+<h3> <b> 1)  Basic Hello World </b> </h3>
+
 ```
-
 #include <iostream>
 using namespace std;
 
@@ -22,7 +22,8 @@ int32_t main(){
 
 ```
 
-2. Data Types & Type Modifiers
+<h3> <b> 2. Data Types & Type Modifiers </b> </h3>
+
 * Data Types
     1) Chars -> 1byte ; Done using ASCII code
     2) Integer -> 4 bytes
@@ -59,7 +60,8 @@ int main(){
 
 ```
 
-3. Input Output Stream
+<h3> <b> 3. Input Output Stream </b> </h3>
+
 ```
 #include <iostream>  
 
@@ -83,7 +85,8 @@ int main(){
 
 ```
 
-4. If Else
+<h3> <b> 4. If Else </b> </h3>
+
 * Condition needs to satisfy for moving ahead
 * Else is used for otherwise cases.
 ```
@@ -116,7 +119,8 @@ int main(){
 
 ```
 
-5. Loops
+<h3> <b> 5. Loops </b> </h3>
+
 * For loop ; Need to provide the length for which we have to iterate
 * While loop ; Need to put a terminating condition
 ```
@@ -190,7 +194,8 @@ int main(){
 
 ```
 
-6. Switch
+<h3> <b> 6. Switch </b> </h3>
+
 * Switch is to avoid if conditions if we have a set of outcomes to compare
 * can set a default condition
 * need to break out
@@ -228,7 +233,8 @@ int main(){
 
 ```
 
-7. Operators
+<h3> <b> 7. Operators </b> </h3>
+
 * Assignment Operators
     1) = , += , -=
     2) *= , /= 
@@ -280,7 +286,8 @@ int main(){
 
 ```
 
-8. Functions
+<h3> <b> 8. Functions </b> </h3>
+
 * They are used to Have independent functionality within the code
 * Difference based on Return Types and Inputs
 
@@ -338,7 +345,8 @@ int factorial(int n){
 
 ```
 
-9. Arrays Basics
+<h3> <b> 9. Arrays Basics </b> </h3>
+
 * List of elements of <b>same</b> datatype.
 * Need to define size first
 ```
@@ -382,7 +390,8 @@ int main(){
 
 ```
 
-10. Array Searches
+<h3> <b> 10. Array Searches </b> </h3>
+
 * Linear Search -> O(N)
 * Binary Search -> O(log(N)) ; works for sorted arrays only
 ```
@@ -468,3 +477,120 @@ int main(){
     }
 }
 ```
+
+<h3> <b> 11. Array Sorting </b> </h3>
+
+* <b> selection_sort </b> -> Take the minimum and swap with first repeatedly; and move ahead & repeat n times
+* <b> bubble_sort </b> -> swap if elem on right is less than left throughout the array ; repeat n times
+* <b> insertion_sort </b> -> Insert an element from an Unsorted Array to its correct position in sorted array
+
+```
+#include<iostream>
+#include <climits>
+#include <bits/stdc++.h>
+using namespace std;
+```
+
+```
+// Take the minimum and swap with first repeatedly; and move ahead & repeat
+void selection_sort(int arr[], int length){
+    for (int i= 0; i< length - 1; i++){
+        for (int j= i + 1; j< length; j++){
+            if (arr[j] < arr[i]){
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        
+    }
+    for (int i=0; i< length; i++){
+        cout << arr[i] << " ";
+    }
+
+    cout <<  endl;
+}
+```
+
+```
+// swap if elem on right is less than left throughout the array ; repeat n times
+void bubble_sort(int arr[], int length){
+    for (int i=0; i< length-1; i++){
+        for (int j= 1; j< length - i; j++){
+            if (arr[i+j+1] < arr[i+j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    for (int i=0; i< length; i++){
+        cout << arr[i] << " ";
+    }
+    cout <<  endl;
+}
+```
+
+```
+void bubble_sort2(int arr[], int length){
+    int counter = 0;
+    while (counter < length){
+        for (int i = 0; i < length - 1; i++){
+            if (arr[i] > arr[i+1]){
+                int temp = arr[i+1];
+                arr[i+1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        counter += 1;
+    }
+
+    for (int i=0; i< length; i++){
+        cout << arr[i] << " ";
+    }
+    cout <<  endl;
+}
+```
+
+```
+// Insert an element from an Unsorted Array to its correct position in sorted array
+void insertion_sort(int arr[], int length){
+    for (int i=1; i<length ; i++){
+        int current = arr[i];
+        int tmp = i-1;
+        while (tmp >= 0 && arr[tmp] > current){
+            arr[tmp + 1] = arr[tmp];
+            tmp--;
+        }
+        arr[tmp + 1] = current;
+    }
+
+    for (int i=0; i< length; i++){
+        cout << arr[i] << " ";
+    }
+    cout <<  endl;
+}
+```
+
+```
+int main(){
+
+    int length ;
+    cin >> length;
+
+    int arr[length];
+
+    for(int i=0; i< length; i++){
+        cin >> arr[i];
+    }
+
+    selection_sort(arr, length);
+    bubble_sort(arr, length);
+    bubble_sort2(arr, length);
+    insertion_sort(arr, length);
+    return 0;
+
+}
+```
+
+
