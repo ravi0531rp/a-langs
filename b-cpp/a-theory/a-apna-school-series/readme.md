@@ -671,3 +671,145 @@ while (row_ctr < bar){
     col_ctr++;
 }
 ```
+
+<h3> <b> 13. Character Arrays </b> </h3>
+
+* Array Of Characters
+* Defined with one extra space (for '\0')
+* arr[n+1]
+
+```
+#include <iostream>
+#include <climits>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+```
+
+```
+bool is_palindrome(char arr[], int size){
+    bool flag = true;
+    for (int i=0; i< int(size/2); i++){
+        if (arr[i] != arr[size - i - 1]){
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+```
+
+```
+int main(){
+
+    // basic 
+    char arr[100] = "apple"; // always keep n+1
+    int i= 0;
+    while (arr[i] != '\0'){
+        cout << arr[i] << endl;
+        i++;
+    }
+
+    // check palindrome
+    int n;
+    cin >> n;
+
+    char name[n+1];
+    cin >> name;
+    cout << is_palindrome(name, n) << endl;
+
+
+    return 0;
+}
+```
+
+<h3> <b> 14. Pointers basics </b> </h3>
+
+* variables that store address of other variables
+* int *ptr = &a;
+* Need to learn 3 things 1) get address via & 2) dereference via & and 3) create via int *
+
+```
+#include <iostream>
+#include <bits/stdc++.h>
+#include <climits>
+
+using namespace std;
+
+int main(){
+
+    int a = 200;
+    int *aptr = &a; // always declare the pointer of the same datatype as the object itself
+
+    cout << aptr << endl; // lets say it is 2000 (just for understanding)
+
+    *aptr = 300;
+    cout << a << endl; // value got changed to 300 in a when we modified the value at the address pointed by the pointer
+
+    aptr++;
+    cout << aptr << endl; // increase its address by 4 (because of int) (now it becomes 2004)
+    *aptr = 400;
+
+    cout << a << endl; // this time a doesn't change as aptr isn't pointing at it anymore
+}
+```
+
+<h3> <b> 15. Pointers With Arrays </b> </h3>
+
+* Variable name of the array points to the first address of the array
+* If we write printf(a) ; it will print the pointer to index 0
+
+```
+#include <iostream>
+#include <bits/stdc++.h>
+#include <climits>
+
+using namespace std;
+
+int main(){
+
+    int arr[] = {10,20,30};
+    cout << arr << endl; // 0x7ff7b220c11c or address to the first index of the array
+    cout << *arr << endl; // 10 or the zeroth element
+    int *ptr = &arr[0]; // As expected, its the same 0x7ff7b220c11c
+    cout << ptr << " " << &arr[0]<<endl; // Writing arr or &arr[0] refers to the same address
+
+    for (int i=0; i< 3; i++){
+        cout << *(arr+i) << endl; // prints 10 20 30
+    }
+}
+
+```
+
+<h3> <b> 16. Pointers with Functions </b> </h3>
+
+```
+#include <iostream>
+#include <bits/stdc++.h>
+#include <climits>
+
+using namespace std;
+
+void swap(int *a, int *b){ // call by reference
+    int temp = *a;
+    *a = *b;
+    *b  = temp;
+
+}
+```
+
+```
+int main(){
+
+    int a = 2;
+    int b = 3;
+
+    int *aptr = &a;
+    int *bptr = &b;
+
+    swap(aptr,bptr);
+    cout << a << " " << b << endl;
+}
+```
