@@ -38,6 +38,8 @@ int last_occurence(int arr[], int n, int i, int key){
     return -1;
 }
 
+
+
 int main(){
     int arr[5] = {1,2,3,4,5};
     cout << check_sorted(arr, 5) << endl;
